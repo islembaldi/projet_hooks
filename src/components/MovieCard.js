@@ -1,8 +1,13 @@
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import ReactStars from "react-rating-stars-component";
+import { Link, useNavigate } from "react-router-dom"; // Importez le composant Link
 import "./style.css";
 
 const MovieCard = ({ movie }) => {
+  const navigate = useNavigate();
+  const MovieNavigate = (id) => {
+    navigate(`/movie-details/${id}`);
+  };
   return (
     <div>
       <>
@@ -21,7 +26,13 @@ const MovieCard = ({ movie }) => {
                 edit={false}
               />
             </div>
-            {/*<Button variant="primary">Go somewhere</Button>*/}
+            {/* Utilisez le composant Link pour gérer la navigation */}
+            {/* <Link to={`/movie-details/${movie.id}`}> */}
+
+            <Button variant="primary" onClick={() => MovieNavigate(movie.id)}>
+              Movie Trailer
+            </Button>
+            {/* </Link> */}
           </Card.Body>
         </Card>
       </>

@@ -9,6 +9,8 @@ import {
 import ReactStars from "react-rating-stars-component";
 import { AddMovie } from "./AddMovie";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./style.css";
 
 const NavBar = ({
   setRatingChange,
@@ -38,9 +40,15 @@ const NavBar = ({
         <Container>
           <Navbar.Brand href="#home">Movie APP</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link>
+              <Link to="/Home"> Home</Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/About-us"> About-us</Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/movie-details"> Movie Details </Link>
+            </Nav.Link>
             <Button variant="light" onClick={handleShow}>
               Add New Movie
             </Button>{" "}
